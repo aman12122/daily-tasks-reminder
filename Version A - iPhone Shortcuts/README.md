@@ -64,6 +64,15 @@ A nightly automation that sends unfinished to-do items from Apple Notes to your 
 
 ---
 
+## Demo
+
+<div align="center">
+  <img src="images/IMG_4559.PNG" width="200" alt="Step 1" />
+  <img src="images/IMG_4560.PNG" width="200" alt="Step 2" />
+  <img src="images/IMG_4561.PNG" width="200" alt="Step 3" />
+  <img src="images/IMG_4562.PNG" width="200" alt="Step 4" />
+</div>
+
 ## Requirements
 
 - iPhone running iOS 26.2+

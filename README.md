@@ -1,23 +1,28 @@
-# Daily Tasks Reminder System
+# Daily Task Reminder System
 
-This repository hosts different implementations of a nightly to-do list reminder system.
+## Project Overview
+This repository contains the evolution of a personal productivity tool designed to send daily SMS reminders for unfinished tasks. It progressed through three versions, moving from a local mobile automation to a fully serverless cloud architecture.
 
-## Project Structure
+## Versions
 
-### [Version A: iPhone Shortcuts Implementation](./Version%20A%20-%20iPhone%20Shortcuts/README.md)
-The MVP version running entirely on iOS using Shortcuts and Twilio.
-- **Status:** ✅ Complete
-- **Architecture:** Client-side automation (No server required)
-- **Features:** Reads Apple Notes ("Daily Tasks"), filters unchecked items, sends SMS via Twilio at 10pm.
+### [Version A - iPhone Shortcuts](./Version%20A%20-%20iPhone%20Shortcuts)
+- **Tech:** iOS Shortcuts, JavaScript.
+- **Mechanism:** Runs locally on iPhone.
+- **Status:** Deprecated (Unreliable automation triggers).
 
-### [Version B: Mac + Cloud Implementation](./Version%20B%20-%20Mac%20and%20Cloud/README.md)
-A robust version syncing data from a Mac to the cloud, allowing delivery even when devices are offline.
-- **Status:** ✅ Complete
-- **Architecture:** Hybrid (Mac Daemon + AWS S3 + AWS Lambda)
-- **Features:**
-  - **Native SQLite Parsing:** Reads checklist status directly from Apple Notes database.
-  - **Background Sync:** Runs hourly on the Mac.
-  - **Serverless Delivery:** Sends SMS from the cloud (AWS Lambda).
+### [Version B - Mac and Cloud](./Version%20B%20-%20Mac%20and%20Cloud)
+- **Tech:** Python, SQLite, Reverse Engineering (Protobuf), AWS S3, AWS Lambda.
+- **Mechanism:** A local Mac script hacks the Apple Notes database to extract tasks and syncs them to S3. Cloud Lambda sends the SMS.
+- **Highlight:** Contains a custom Protobuf parser for Apple Notes.
 
----
-*Created by Aman*
+### [Version C - Notion and Cloud (Current)](./Version%20C%20-%20Notion%20and%20Cloud)
+- **Tech:** Notion API, AWS Lambda, Python, EventBridge.
+- **Mechanism:** Fully serverless. Lambda queries Notion API directly and sends SMS via Twilio.
+- **Status:** **Active & Production Ready**.
+
+## Documentation
+- [Learning Journey](Version%20C%20-%20Notion%20and%20Cloud/docs/LEARNING_JOURNEY.md): A log of engineering challenges, specifically reverse-engineering Apple Notes.
+- [Technical Specs](Version%20C%20-%20Notion%20and%20Cloud/docs/SPECIFICATIONS.md): Architecture diagrams and API details.
+
+## Author
+Aman Vishwanath

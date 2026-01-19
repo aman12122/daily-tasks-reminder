@@ -4,3 +4,10 @@
 *.pyc
 *.zip
 /tmp/
+infrastructure/policy.json
+infrastructure/trust-policy.json
+infrastructure/new_agent_keys.json
+manual_response.json
+manual_response_2.json
+response.json
+tasks.json

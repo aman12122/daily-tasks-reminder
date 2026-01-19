@@ -20,21 +20,24 @@ graph LR
     E -->|SMS| F[User Phone]
 ```
 
-## Demo & Progress
+## Gallery
 
-| **1. Local Sync (Terminal)** | **2. Cloud Storage (AWS S3)** |
+### Core Pipeline
+| 1. Local Parsing | 2. Cloud Storage |
 |:---:|:---:|
-| <img src="images/demo_terminal_run.png" width="400" alt="Terminal Output" /> | <img src="images/demo_aws_s3.png" width="400" alt="S3 Bucket" /> |
-| *Python script syncing native checkboxes* | *JSON data synced to the cloud* |
+| <img src="images/demo_terminal_run.png" width="400" /> | <img src="images/demo_aws_s3.png" width="400" /> |
+| **Terminal Output:**<br>The local Python script (`sync_tasks.py`) successfully connecting to the Apple Notes SQLite database, parsing 10 tasks, and uploading to S3. | **AWS S3 Console:**<br>Verification that the `tasks.json` file has been successfully uploaded to the S3 bucket `daily-tasks-reminder-data...`. |
 
-| **3. Serverless Logic (Lambda)** | **4. Final Delivery (SMS)** |
+| 3. Serverless Logic | 4. Final Delivery |
 |:---:|:---:|
-| <img src="images/demo_aws_lambda.png" width="400" alt="Lambda Function" /> | <img src="images/demo_sms_final.png" width="400" alt="SMS Notification" /> |
-| *Lambda function ready to trigger* | *The final result on your phone* |
+| <img src="images/demo_aws_lambda.png" width="400" /> | <img src="images/demo_sms_final.png" width="400" /> |
+| **AWS Lambda Console:**<br>The `daily_task_notifier` function which reads the S3 file and integrates with Twilio. | **SMS Notification:**<br>The final result received on the iPhone. The message lists only the 10 unfinished tasks (filtering out checked items). |
 
-### Debugging Journey
-*Early Parsing Issues:*
-<img src="images/demo_sms_parsing_error.png" width="300" alt="Parsing Error" />
+### Development & Debugging
+| Parsing Challenge |
+|:---:|
+| <img src="images/demo_sms_parsing_error.png" width="300" /> |
+| **Early Parsing Error:**<br>An earlier iteration where the parser incorrectly split task strings (e.g., "R", "ead", "10") because it treated every style run as a separate line. This was fixed by aggregating runs by line. |
 
 ## Features
 - **Native Checklists:** Supports standard Apple Notes checklists (via SQLite parsing).

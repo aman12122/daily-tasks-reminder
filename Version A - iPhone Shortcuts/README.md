@@ -64,14 +64,14 @@ A nightly automation that sends unfinished to-do items from Apple Notes to your 
 
 ---
 
-## Demo
+## Gallery
 
-<div align="center">
-  <img src="images/IMG_4559.PNG" width="200" alt="Step 1" />
-  <img src="images/IMG_4560.PNG" width="200" alt="Step 2" />
-  <img src="images/IMG_4561.PNG" width="200" alt="Step 3" />
-  <img src="images/IMG_4562.PNG" width="200" alt="Step 4" />
-</div>
+| Image | Description |
+|:---:|:---|
+| <img src="images/IMG_4559.PNG" width="250" /> | **Shortcut Setup:** <br>The iOS Shortcut configuration showing the flow of actions. |
+| <img src="images/IMG_4560.PNG" width="250" /> | **Notes Integration:** <br>Finding the specific "Daily Tasks" note within the Notes app. |
+| <img src="images/IMG_4561.PNG" width="250" /> | **Logic Flow:** <br>Iterating through list items and checking for completion status. |
+| <img src="images/IMG_4562.PNG" width="250" /> | **Final Result:** <br>The SMS notification received via Twilio containing the list of unfinished tasks. |
 
 ## Requirements
 
